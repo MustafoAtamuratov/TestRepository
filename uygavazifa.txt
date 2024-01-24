@@ -1,0 +1,534 @@
+PS C:\Users\R-TECH> git help
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--config-env=<name>=<envvar>] <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+PS C:\Users\R-TECH> git status
+fatal: not a git repository (or any of the parent directories): .git
+PS C:\Users\R-TECH> ls
+
+
+    Каталог: C:\Users\R-TECH
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        02.01.2024     22:57                .android
+d-----        03.01.2024     11:42                .jdks
+d-----        05.01.2024     14:45                .m2
+d-r---        29.12.2023     12:18                3D Objects
+d-r---        29.12.2023     12:18                Contacts
+d-r---        22.01.2024     17:24                Desktop
+d-r---        22.01.2024     17:25                Documents
+d-r---        21.01.2024     22:48                Downloads
+d-r---        29.12.2023     12:18                Favorites
+d-----        21.01.2024     12:46                IdeaProjects
+d-r---        29.12.2023     12:18                Links
+d-----        21.01.2024     22:53                MediaGet2
+d-r---        29.12.2023     12:18                Music
+d-r---        29.12.2023     12:23                OneDrive
+d-r---        29.12.2023     12:19                Pictures
+d-----        21.01.2024     23:03                PixelSee
+d-----        09.01.2024     19:12                Postman
+d-r---        29.12.2023     12:18                Saved Games
+d-r---        29.12.2023     12:19                Searches
+d-r---        04.01.2024     19:34                Videos
+-a----        22.01.2024     16:41             81 .gitconfig
+-a----        22.01.2024     16:41             20 .lesshst
+-a----        09.05.2017      0:26            152 dsp_stereo_tool.ini
+
+
+PS C:\Users\R-TECH> cd Desktop
+PS C:\Users\R-TECH\Desktop> mkdir gitProject
+
+
+    Каталог: C:\Users\R-TECH\Desktop
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        23.01.2024     16:38                gitProject
+
+
+PS C:\Users\R-TECH\Desktop> cd gitProject
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+fatal: not a git repository (or any of the parent directories): .git
+PS C:\Users\R-TECH\Desktop\gitProject> git init
+Initialized empty Git repository in C:/Users/R-TECH/Desktop/gitProject/.git/
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\R-TECH\Desktop\gitProject> git add test1.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   test1.txt
+
+PS C:\Users\R-TECH\Desktop\gitProject> git commit -m "Add file test1"
+[master (root-commit) c7e8020] Add file test1
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test1.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\R-TECH\Desktop\gitProject> git add test1.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   test1.txt
+
+PS C:\Users\R-TECH\Desktop\gitProject> git commit -m "removing file test1.txt"
+[master 4ffdfa8] removing file test1.txt
+ 1 file changed, 1 insertion(+)
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\R-TECH\Desktop\gitProject> git add test2.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   test2.txt
+
+PS C:\Users\R-TECH\Desktop\gitProject> git commit -m "Add file test2.txt"
+[master 88bf22e] Add file test2.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test2.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\R-TECH\Desktop\gitProject> git add test.txt
+fatal: pathspec 'test.txt' did not match any files
+PS C:\Users\R-TECH\Desktop\gitProject> git add test2.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   test2.txt
+
+PS C:\Users\R-TECH\Desktop\gitProject> git commit -m "removed file test2.txt"
+[master 8eaee01] removed file test2.txt
+ 1 file changed, 1 insertion(+)
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\R-TECH\Desktop\gitProject> git add test3.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   test3.txt
+
+PS C:\Users\R-TECH\Desktop\gitProject> git commit -m "Add file test3.txt"
+[master bf28742] Add file test3.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test3.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test3.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\R-TECH\Desktop\gitProject> git add test3.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   test3.txt
+
+PS C:\Users\R-TECH\Desktop\gitProject> git commit "Changed file test3"
+error: pathspec 'Changed file test3' did not match any file(s) known to git
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   test3.txt
+
+PS C:\Users\R-TECH\Desktop\gitProject> git commit -m "Changed file test3"
+[master f31cb4b] Changed file test3
+ 1 file changed, 1 insertion(+)
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test4.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\R-TECH\Desktop\gitProject> git add test4.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   test4.txt
+
+PS C:\Users\R-TECH\Desktop\gitProject> git commit -m "Add file test4"
+[master 3570682] Add file test4
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test4.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test4.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\R-TECH\Desktop\gitProject> git add test4.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   test4.txt
+
+PS C:\Users\R-TECH\Desktop\gitProject> git commit -m "Changed file test4"
+[master b1aa1e0] Changed file test4
+ 1 file changed, 1 insertion(+)
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test5.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\R-TECH\Desktop\gitProject> git add test5.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   test5.txt
+
+PS C:\Users\R-TECH\Desktop\gitProject> git commit -m "Add file test5"
+[master 0524e84] Add file test5
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test5.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test5.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\R-TECH\Desktop\gitProject> git add test5.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   test5.txt
+
+PS C:\Users\R-TECH\Desktop\gitProject> git commit -m "Changed file test5"
+[master dbaaac4] Changed file test5
+ 1 file changed, 1 insertion(+)
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test6.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\R-TECH\Desktop\gitProject> git add test6.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   test6.txt
+
+PS C:\Users\R-TECH\Desktop\gitProject> git commit -m "Add file test6"
+[master dac339c] Add file test6
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test6.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test6.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\R-TECH\Desktop\gitProject> git add test6.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   test6.txt
+
+PS C:\Users\R-TECH\Desktop\gitProject> git commit -m "Changed file test6"
+[master da80a80] Changed file test6
+ 1 file changed, 1 insertion(+)
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test7.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\R-TECH\Desktop\gitProject> git add test7.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   test7.txt
+
+PS C:\Users\R-TECH\Desktop\gitProject> git commit -m "Add file test7"
+[master 18f6e62] Add file test7
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test7.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test7.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\R-TECH\Desktop\gitProject> git add test7.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   test7.txt
+
+PS C:\Users\R-TECH\Desktop\gitProject> git commit -m "Changed file test7"
+[master b635e6f] Changed file test7
+ 1 file changed, 1 insertion(+)
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test8.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\R-TECH\Desktop\gitProject> git add test8.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   test8.txt
+
+PS C:\Users\R-TECH\Desktop\gitProject> git commit -m "Add file test8"
+[master ec457d9] Add file test8
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test8.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test8.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\R-TECH\Desktop\gitProject> git add test8.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   test8.txt
+
+PS C:\Users\R-TECH\Desktop\gitProject> git commit -m "Changed file test8"
+[master 4a80989] Changed file test8
+ 1 file changed, 1 insertion(+)
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test9.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\R-TECH\Desktop\gitProject> git add test9.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   test9.txt
+
+PS C:\Users\R-TECH\Desktop\gitProject> git commit -m "Add file test9"
+[master a8c7440] Add file test9
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test9.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test9.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\R-TECH\Desktop\gitProject> git add test9.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   test9.txt
+
+PS C:\Users\R-TECH\Desktop\gitProject> git commit -m "Changed file test9"
+[master 7e9cc3d] Changed file test9
+ 1 file changed, 1 insertion(+)
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test10.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\R-TECH\Desktop\gitProject> git add test10.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   test10.txt
+
+PS C:\Users\R-TECH\Desktop\gitProject> git commit -m "Add file test10"
+[master 22b8d91] Add file test10
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test10.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test10.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\R-TECH\Desktop\gitProject> git add test10.txt
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   test10.txt
+
+PS C:\Users\R-TECH\Desktop\gitProject> git commit -m "Changed file test10"
+[master 32e0662] Changed file test10
+ 1 file changed, 1 insertion(+)
+PS C:\Users\R-TECH\Desktop\gitProject> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\R-TECH\Desktop\gitProject>
